@@ -43,7 +43,7 @@ const App = () => {
 
             {
                 (() => {
-                    if(movies.length > 0) {
+                    if(movies.length > 0 ) {
                         return (  
                           <div className="container"> 
                             {movies.map((movie)=> (
@@ -58,8 +58,26 @@ const App = () => {
                              </div>
                           )
                       }
-                })
+                }) () 
             }
+
+            {/*           
+                { ( () => { if(condition) 
+                    { 
+                        return ( 
+                            <div/> 
+                        )
+                    }
+                     else { 
+                        return(
+                            <div/>  
+                        )
+                  
+                    } 
+                }) ()
+
+                } */}
+         
 
        </div>
 
