@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 
-h1 {
+.movie-h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
@@ -199,7 +199,7 @@ h1 {
     padding: 4rem 1rem;
   }
 
-  h1 {
+  .movie-h1 {
     font-size: 2rem;
   }
 

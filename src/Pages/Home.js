@@ -3,8 +3,10 @@ import {Link} from 'react-router-dom';
 const Home = () => {
 
     return(
+   
         <div className="Home">
-            <h1>Apps</h1>
+         
+           { <h1>Apps</h1> }
             <nav>
                 <div className='home-links'>
                     <Link to="/movieland"> Movie Land App</Link>  

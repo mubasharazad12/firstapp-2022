@@ -1,6 +1,7 @@
 
-import { Routes, BrowserRouter, Route, Link } from "react-router-dom";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import "./Assets/css/App.css"
+import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import MovieLand from "./Pages/MovieLand";
 import TodoHome from "./Pages/TodoHome";
@@ -15,7 +16,7 @@ const App = () => {
         <BrowserRouter>
         <div className="app">
 
-           <Link to="/"> Home </Link>
+            <NavBar />
             
             <div className=""> 
             <Routes>

@@ -1,34 +1,35 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import "../../Assets/css/MovieLand.css"
 import SearchIcon from "../../Assets/svg/search.svg"
+import useFetch from "../../Hooks/useFetch";
 import MoviesList  from "./MoviesList";
 // f96712af
 
 const API_URL = 'http://www.omdbapi.com/?apikey=f96712af';
-
+ 
 
 
 const MovieApp = () => {
 
-    const [movies, setMovies] = useState([]);
+    
+    const { movies,  searchMovies} = useFetch(API_URL);
+ 
     const [searchTerm, setSearchTerm] = useState('');
+    // const searchMovies = async (title) => {
+    //     const response = await fetch(`${API_URL}&s=${title}`);
+    //     const data = await response.json();
+    //     setMovies(data.Search);
+    //     console.log(data.Search);
+    // }
 
-    const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`);
-        const data = await response.json();
-        setMovies(data.Search);
-        console.log(data.Search);
-    }
-
-    useEffect(() => {
-        searchMovies('Movie');
-    }, []);
+    // useEffect(() => {
+    //     searchMovies('Movie');
+    // }, []);
 
     return(
         
        <div className="MovieLand">
-            <h1>Movie Land</h1>
+            <h1 className="movie-h1">Movie Land</h1>
 
             <div className="search">
                 <input 

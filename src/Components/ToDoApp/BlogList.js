@@ -7,7 +7,7 @@ const BlogList = ({blogs}) => {
             {blogs.map((blog) => (
                 <div className="blog-preview" key={blog.id}>
                     
-                        <p>{blog.name}</p>
+                        <h2>{blog.name}</h2>
                         <p>{blog.work}</p>
                         <p>{blog.email}</p>
                         <p>{blog.dob}</p>

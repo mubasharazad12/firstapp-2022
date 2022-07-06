@@ -1,10 +1,10 @@
-import Blogs from "../Components/ToDoApp/Blogs";
+import Blog from "../Components/ToDoApp/Blog";
 
 const TodoHome = () => {
 
     return(
         <div className="TodoHome">
-            <Blogs />
+            <Blog />
         </div>
     );
 
