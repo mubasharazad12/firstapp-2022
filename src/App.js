@@ -1,89 +1,35 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import "./App.css"
-import SearchIcon from "./search.svg"
-import Movies  from "./Movies";
+
+import { Routes, BrowserRouter, Route, Link } from "react-router-dom";
+import "./Assets/css/App.css"
+import Home from "./Pages/Home";
+import MovieLand from "./Pages/MovieLand";
+
 // f96712af
 
-const API_URL = 'http://www.omdbapi.com/?apikey=f96712af';
 
 
 
 const App = () => {
-
-    const [movies, setMovies] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const searchMovies = async (title) => {
-        const response = await fetch(`${API_URL}&s=${title}`);
-        const data = await response.json();
-        setMovies(data.Search);
-        console.log(data.Search);
-    }
-
-    useEffect(() => {
-        searchMovies('Movie');
-    }, []);
-
     return(
-       <div className="app">
-            <h1>Movie Land</h1>
+        <BrowserRouter>
+        <div className="app">
 
-            <div className="search">
-                <input 
-                    placeholder="Search for movies" 
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <img
-                    src={SearchIcon}
-                    alt="Search icon"
-                    onClick={() => searchMovies(searchTerm)}
-                />
+           <Link to="/"> Home </Link>
+            
+            <div className="content"> 
+            <Routes>
+
+                <Route exact path="/movieland" element={<MovieLand />} />
+                <Route exact path="/" element={<Home />} /> 
+
+            </Routes>
             </div>
-
-            {
-                (() => {
-                    if(movies.length > 0 ) {
-                        return (  
-                          <div className="container"> 
-                            {movies.map((movie)=> (
-                                <Movies movie={movie} />
-                            ) )}
-                          </div>
-                        ) 
-                      } else {
-                          return (
-                            <div className="empty"> 
-                                <h2>No Movies Found</h2>
-                             </div>
-                          )
-                      }
-                }) () 
-            }
-
-            {/*           
-                { ( () => { if(condition) 
-                    { 
-                        return ( 
-                            <div/> 
-                        )
-                    }
-                     else { 
-                        return(
-                            <div/>  
-                        )
-                  
-                    } 
-                }) ()
-
-                } */}
-         
-
-       </div>
-
-           
-    );
+ 
+        </div>
+       </BrowserRouter>
+ 
+            
+     );
 
 }
 

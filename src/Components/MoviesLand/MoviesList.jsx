@@ -1,6 +1,6 @@
 import React from "react";
 
-const Movies = ({ movie }) => {
+const MoviesList = ({ movie }) => {
 
     return (
         <div className="movie">
@@ -19,4 +19,4 @@ const Movies = ({ movie }) => {
 
 }
 
-export default Movies;
+export default MoviesList;
