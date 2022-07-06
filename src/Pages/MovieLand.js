@@ -8,7 +8,7 @@ const MovieLand = () => {
 
     return(
   
-        <div className="MovieLand">
+        <div className="">
             <MovieApp/>
         </div>
 

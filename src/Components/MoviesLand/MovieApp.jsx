@@ -26,6 +26,7 @@ const MovieApp = () => {
     }, []);
 
     return(
+        
        <div className="MovieLand">
             <h1>Movie Land</h1>
 

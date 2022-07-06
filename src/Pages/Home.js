@@ -7,7 +7,8 @@ const Home = () => {
             <h1>Apps</h1>
             <nav>
                 <div className='home-links'>
-                    <Link to="/movieland"> Movie Land </Link>  
+                    <Link to="/movieland"> Movie Land App</Link>  
+                    <Link to="/todoapp">  ToDo App </Link>  
                     
                 </div>
             </nav>

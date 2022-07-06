@@ -1,7 +1,8 @@
 
+
 .MovieLand {
   padding: 4rem;
-
+  background-color: #1c1d1f;
   display: flex;
   justify-content: center;
   align-items: center;
