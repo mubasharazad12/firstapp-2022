@@ -1,8 +1,12 @@
 
-const MoviesList = ({ movie }) => {
+const MoviesList = ({ movies }) => {
 
     return (
-        <div className="movie" >
+        <>
+        {movies.map((movie) => (
+
+        <div className="movie"   key={movie.imdbID} >
+            
                     <div>
                         <p>{movie.Year}</p>
                     </div>
@@ -14,6 +18,9 @@ const MoviesList = ({ movie }) => {
                         <h3> {movie.Title}</h3>
                     </div>
         </div>
+        
+        ))}
+        </>
     );
 
 }

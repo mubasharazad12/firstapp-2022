@@ -5,30 +5,21 @@ import useFetch from "../../Hooks/useFetch";
 import MoviesList  from "./MoviesList";
 // f96712af
 
-const API_URL = 'http://www.omdbapi.com/?apikey=f96712af';
+const API_URL = 'http://www.omdbapi.com/?apikey=f96712af&s=Movie';
  
 
 
 const MovieApp = () => {
 
     
-    const { movies,  searchMovies} = useFetch(API_URL);
+    const { movies,  searchMovies, error} = useFetch(API_URL);
  
     const [searchTerm, setSearchTerm] = useState('');
-    // const searchMovies = async (title) => {
-    //     const response = await fetch(`${API_URL}&s=${title}`);
-    //     const data = await response.json();
-    //     setMovies(data.Search);
-    //     console.log(data.Search);
-    // }
-
-    // useEffect(() => {
-    //     searchMovies('Movie');
-    // }, []);
 
     return(
         
        <div className="MovieLand">
+           { error && <div> {alert(error)} </div>}
             <h1 className="movie-h1">Movie Land</h1>
 
             <div className="search">
@@ -48,10 +39,11 @@ const MovieApp = () => {
                 (() => {
                     if(movies.length > 0 ) {
                         return (  
+                            
                           <div className="container"> 
-                            {movies.map((movie)=> (
-                                <MoviesList movie={movie} />
-                            ) )}
+                        
+                                <MoviesList movies={movies} />
+                          
                           </div>
                         ) 
                       } else {
