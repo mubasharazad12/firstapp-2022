@@ -32,7 +32,7 @@ const MovieApp = () => {
                 <img
                     src={SearchIcon}
                     alt="Search icon"
-                    onClick={() => searchMovies(searchTerm)}
+                    onClick={() => movies(searchTerm)}
                 />
             </div>
 
