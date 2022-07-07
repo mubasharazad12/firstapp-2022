@@ -12,14 +12,15 @@ const API_URL = 'http://www.omdbapi.com/?apikey=f96712af&s=Movie';
 const MovieApp = () => {
 
     
-    const { movies,  searchMovies, error} = useFetch(API_URL);
+    const { movies,  searchMovies, error, loading} = useFetch(API_URL);
  
     const [searchTerm, setSearchTerm] = useState('');
 
     return(
         
        <div className="MovieLand">
-           { error && <div> {alert(error)} </div>}
+            { loading && <h1 className="movie-h1"> loading..... </h1>}
+            { error && <div> {alert(error)} </div>}
             <h1 className="movie-h1">Movie Land</h1>
 
             <div className="search">

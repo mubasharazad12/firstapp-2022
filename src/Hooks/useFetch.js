@@ -25,6 +25,7 @@ const useFetch = (url) =>{
                 }
             const data = await response.json();
             setMovies(data.Search);
+            setLoading(false);
             console.log(data);
             } catch (err) {
                 setError(err.message);
