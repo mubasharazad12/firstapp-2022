@@ -1,6 +1,7 @@
 
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import "./Assets/css/App.css"
+import MovieDetails from "./Components/MoviesLand/MovieDetails";
 import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import MovieLand from "./Pages/MovieLand";
@@ -21,9 +22,12 @@ const App = () => {
             <div className=""> 
             <Routes>
 
-                <Route exact path="/movieland" element={<MovieLand />} />
+               
                 <Route exact path="/" element={<Home />} /> 
                 <Route exact path="/todoapp" element={<TodoHome />} /> 
+                <Route exact path="/movieland" element={<MovieLand />} />
+                <Route exact path="/moviedetails/:imdbID" element={<MovieDetails />} />
+
 
             </Routes>
             </div>

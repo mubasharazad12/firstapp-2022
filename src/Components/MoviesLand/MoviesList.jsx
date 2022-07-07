@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 const MoviesList = ({ movies }) => {
 
     return (
@@ -6,7 +6,7 @@ const MoviesList = ({ movies }) => {
         {movies.map((movie) => (
 
         <div className="movie"   key={movie.imdbID} >
-            
+                    <Link to={`/moviedetails/${movie.imdbID}`}>
                     <div>
                         <p>{movie.Year}</p>
                     </div>
@@ -17,6 +17,8 @@ const MoviesList = ({ movies }) => {
                         <span>  {movie.Type} </span>
                         <h3> {movie.Title}</h3>
                     </div>
+                     </Link>
+                    
         </div>
         
         ))}
