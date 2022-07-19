@@ -5,16 +5,17 @@ import useFetch from "../../Hooks/useFetch";
 import MoviesList  from "./MoviesList";
 // f96712af
 
-const API_URL = 'http://www.omdbapi.com/?apikey=f96712af&s=Movie';
+const API_URL = 'http://www.omdbapi.com/?apikey=f96712af&s=';
  
 
 
 const MovieApp = () => {
 
-    
-    const { movies,  searchMovies, error, loading} = useFetch(API_URL);
- 
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState('Movie');
+    const [title, setTtitle] = useState('');
+    const { movies, error, loading} = useFetch(API_URL + searchTerm );
+   
+
 
     return(
         
@@ -26,14 +27,18 @@ const MovieApp = () => {
             <div className="search">
                 <input 
                     placeholder="Search for movies" 
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    value={title}
+                    onChange={(e) => setTtitle(e.target.value)}
                 />
+               
+
+            
                 <img
                     src={SearchIcon}
                     alt="Search icon"
-                    onClick={() => movies(searchTerm)}
+                    onClick={() => setSearchTerm(title)}
                 />
+                  
             </div>
 
             {

@@ -21,7 +21,7 @@ const useFetch = (url) =>{
             try{
             const response = await fetch( url );
                 if(!response.ok) {
-                    throw Error("sadsadasdasdsada");
+                    throw Error("API Error");
                 }
             const data = await response.json();
             setMovies(data.Search);
@@ -37,7 +37,7 @@ const useFetch = (url) =>{
             try{
             const response = await fetch(url); 
             if(!response.ok) {
-                throw Error("json");
+                throw Error("API Error");
             }
     
             const data = await response.json();
