@@ -12,6 +12,7 @@ const CreateBlog = () => {
     const  {handleSubmit ,error ,loading} = usePost('http://localhost:8000/users', data);
 
     
+
     return(
         <div className="create">
             { error && <div> {alert(error)} </div>}
@@ -21,7 +22,7 @@ const CreateBlog = () => {
             <form onSubmit={handleSubmit}>
 
                 <label> Name </label>
-                <input type="text" required value={name} onChange= {(e) => setName(e.target.value)} />
+                <input type="text" required value={name} name="name" onChange= {(e) => setName(e.target.name)} />
 
                 <label> Email </label>
                 <input type="text" required value={email} onChange= {(e) => setEmail(e.target.value)} />
